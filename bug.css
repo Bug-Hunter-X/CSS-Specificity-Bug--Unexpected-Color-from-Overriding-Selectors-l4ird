@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+#myDiv {
+  color: green;
+}
+
+#myDiv.container {
+  color: purple;
+}
+
+#myDiv.container.anotherClass {
+  color: orange;
+}
+```
+
+The problem lies in understanding how CSS specificity works when combining ID selectors, class selectors, and element selectors.  The last rule, with the highest specificity (due to three selectors), will override all previous rules.  This might lead to unexpected behavior if you're not carefully considering the specificity hierarchy.
